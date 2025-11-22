@@ -1,4 +1,4 @@
-# 🚀 Auto-Researcher: AI-Powered Research Proposal Committee
+# 🚀 Auto-Researcher: AI-Powered Research Proposal Coordinate
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Google ADK](https://img.shields.io/badge/Built%20with-Google%20ADK-orange)
@@ -49,8 +49,6 @@ This system leverages the **Google Agent Development Kit (ADK)** and **Sequentia
 3.  **Set Up Environment Variables:** Create a `.env` file with your keys:
     ```env
     GOOGLE_API_KEY="your_gemini_api_key"
-    GOOGLE_SEARCH_API_KEY="your_google_search_api_key"
-    GOOGLE_CSE_ID="your_custom_search_engine_id"
     ```
 
 ---
@@ -67,8 +65,8 @@ Run the Jupyter Notebook `Research Proposal Assistant.ipynb`.
 
 ## 📊 Observability
 
-Logs are automatically saved as JSON files (e.g., `Research_Log_rice_v1_...json`) after each session, capturing the full execution trace for analysis.
+Logs are automatically saved as JSON files (e.g., `Research_Log_chat_...json`) after each session, capturing the full execution trace for analysis.
 
 ---
 
-**Built with ❤️ using Google ADK & Gemini.**
+**Built with using Google ADK & Gemini.**
