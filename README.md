@@ -1,40 +1,74 @@
-# Auto-Researcher-The-AI-Powered-Research-Proposal-Coordinator
+# 🚀 Auto-Researcher: AI-Powered Research Proposal Committee
 
-Overview
-Writing a comprehensive research proposal—specifically identifying a genuine "Research Gap" and formulating a methodology—is a daunting task that typically takes researchers weeks or even months. Auto-Researcher is a multi-agent AI system designed to compress this timeline into minutes. By leveraging the Google Agent Development Kit (ADK) and Gemini 2.5 pro , this project simulates a full academic committee where distinct AI agents collaborate to perform literature reviews, critique existing work, identify gaps, and propose novel methodologies.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Google ADK](https://img.shields.io/badge/Built%20with-Google%20ADK-orange)
+![Gemini](https://img.shields.io/badge/Model-Gemini%201.5%20Flash-purple)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-The Problem
-Traditional LLMs often struggle with long-form research tasks. If asked to "write a research proposal," a single model often hallucinates citations, misses critical logical steps, or produces generic content. It lacks the "critical thinking" required to separate a literature review from a problem statement.
+**Auto-Researcher** is an autonomous multi-agent system designed to accelerate academic research. Instead of relying on a single LLM prompt, this project simulates a **Research Committee** where five specialized AI agents collaborate to search the web, review literature, identify research gaps, and propose scientific methodologies for PhD-level proposals.
 
-The Solution: A Multi-Agent Coordinator
-Instead of relying on a single prompt, this project implements a "Coordinator of Agents" architecture. Each agent has a specialized persona and a specific job, mimicking a real-world research team. They communicate sequentially, passing context and data to one another to build a coherent final output.
 
-Architecture & Agents
-The system is built using Google ADK's SequentialAgent and InMemorySessionService. The workflow consists of 5 specialized agents:
 
-The Coordinator Agent (Manager): Acts as the interface with the user. It understands the research topic and orchestrates the pipeline.
+---
 
-The Researcher Agent (Data Gatherer): Equipped with the Google Search Tool, this agent browses the live internet to fetch real-world, up-to-date research papers and articles. It ensures the data is current, solving the "knowledge cutoff" problem of static models.
+## 🤖 How It Works (The Architecture)
 
-The Reviewer Agent (Academic Writer): Takes the raw data and synthesizes it into a formal Literature Review, highlighting current trends.
+This system leverages the **Google Agent Development Kit (ADK)** and **Sequential Agent Architecture**. The workflow is orchestrated as follows:
 
-The Analyst Agent (The "Brain"): This is the most critical agent. It analyzes the review to find what is missing. It explicitly identifies the Research Gap—the boundary between what is known and what needs to be discovered.
+1.  **Coordinator Agent (The Manager):** Interacts with the user, understands the topic, and manages the workflow.
+2.  **Researcher Agent (The Data Gatherer):** Uses **Google Search Tool** to scrape the live internet for real-time academic resources.
+3.  **Reviewer Agent (The Academic Writer):** Synthesizes raw data into a structured **Literature Review**.
+4.  **Analyst Agent (The Critical Thinker):** Analyzes the review to find what is *missing* and identifies a **Research Gap**.
+5.  **Methodology Agent (The Scientist):** Proposes a scientific **Methodology** (algorithms, data collection) to address the gap.
+6.  **Aggregator Agent:** Compiles all outputs into a final, cohesive Research Proposal.
 
-The Methodology Agent (Scientist): Based only on the identified gap, this agent proposes a scientific Methodology (e.g., specific algorithms, data collection methods) to solve the problem.
+---
 
-The Aggregator Agent: Compiles the outputs from all previous agents into a structured, cohesive final proposal.
+## ✨ Key Features
 
-Key Features
-Agent-to-Agent (A2A) Communication: Utilizing ADK's context passing, agents share outputs seamlessly. The Analyst doesn't need to search; it relies on the Reviewer's output, ensuring logical consistency.
+* **Multi-Agent Collaboration:** Complex tasks broken down into specialized agents.
+* **Agent-to-Agent (A2A) Communication:** Seamless context passing between agents.
+* **Live Internet Access:** Real-time data fetching using Google Custom Search.
+* **Stateful Memory:** `InMemorySessionService` allows for context-aware follow-up questions.
+* **Observability & Logging:** Auto-generates detailed **JSON logs** for every session.
+* **Cost Optimized:** Uses the efficient **Gemini 1.5 Flash** model.
 
-Stateful Memory: The system uses InMemorySessionService to maintain context. Users can ask follow-up questions (e.g., "Explain the methodology again") without restarting the research process.
+---
 
-Observability & Logging: A custom logging system captures the full execution trace (thoughts, tool inputs, and outputs) into a structured JSON file. This allows for detailed debugging and performance evaluation.
+## 🛠️ Installation & Setup
 
-Tool Integration: Integration of GoogleSearchTool allows the agent to access real-time information.
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/your-username/auto-researcher.git](https://github.com/your-username/auto-researcher.git)
+    cd auto-researcher
+    ```
+2.  **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Set Up Environment Variables:** Create a `.env` file with your keys:
+    ```env
+    GOOGLE_API_KEY="your_gemini_api_key"
+    GOOGLE_SEARCH_API_KEY="your_google_search_api_key"
+    GOOGLE_CSE_ID="your_custom_search_engine_id"
+    ```
 
-Technology Stack
-Framework: Google Agent Development Kit (ADK)
-Model: Gemini 2.5 pro
-Tools: Google Search API
-Language: Python
+---
+
+## 🚀 Usage
+
+Run the Jupyter Notebook `Research Proposal Assistant.ipynb`.
+
+**Example Interaction:**
+> **User:** "Create a research proposal on Deep Learning for Rice Variety Classification."
+> **Final Output:** A complete proposal containing Literature Review, Research Gap, and Methodology.
+
+---
+
+## 📊 Observability
+
+Logs are automatically saved as JSON files (e.g., `Research_Log_rice_v1_...json`) after each session, capturing the full execution trace for analysis.
+
+---
+
+**Built with ❤️ using Google ADK & Gemini.**
