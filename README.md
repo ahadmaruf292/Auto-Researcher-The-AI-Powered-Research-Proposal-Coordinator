@@ -2,8 +2,8 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Google ADK](https://img.shields.io/badge/Built%20with-Google%20ADK-orange)
-![Gemini](https://img.shields.io/badge/Model-Gemini%201.5%20Flash-purple)
-![License](https://img.shields.io/badge/License-MIT-green)
+![Gemini](https://img.shields.io/badge/Model-Gemini%2.5%20pro-purple)
+![License](https://img.shields.io/badge/License-Apache2.0-green)
 
 **Auto-Researcher** is an autonomous multi-agent system designed to accelerate academic research. Instead of relying on a single LLM prompt, this project simulates a **Research Committee** where five specialized AI agents collaborate to search the web, review literature, identify research gaps, and propose scientific methodologies for PhD-level proposals.
 
